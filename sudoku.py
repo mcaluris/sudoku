@@ -36,6 +36,7 @@ class Grid:
         row, col = self.selected
         if self.cubes[row][col].value == 0:
             self.cubes[row][col].set(val)
+            self.cubes[row][col].set_temp(0)
             self.update_model()
 
             if valid(self.model, val, (row, col)) and solve(self.model):
